@@ -1,2 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Welcome to the Home Page!</h1>
+
+<% if @projects.any? %>
+  <h2>Projects:</h2>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><%= project.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No projects available.</p>
+<% end %>

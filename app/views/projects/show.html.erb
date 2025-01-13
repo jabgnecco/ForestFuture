@@ -1,9 +1,22 @@
 <p style="color: green"><%= notice %></p>
-<%= render @project %>
-<div>
-  <% if policy(@project).edit? %>
-    <%= link_to "Edit this Project", edit_project_path(@project) %>
-  <% end %>
-  <%= link_to "Back to Projects", projects_path %>
-  <%= button_to "Destroy this project", @project, method: :delete if policy(@project).destroy?%>
+
+<!-- Container for the project details -->
+<div class="container">
+  <!-- Project Details Section -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <%= render @project %>
+    </div>
+  </div>
+
+  <!-- Actions Section -->
+  <div class="d-flex justify-content-between mb-4">
+    <% if policy(@project).edit? %>
+      <%= link_to "Edit this Project", edit_project_path(@project), class: 'btn btn-warning' %>
+    <% end %>
+
+    <%= link_to "Back to Projects", projects_path, class: 'btn btn-secondary' %>
+
+    <%= button_to "Destroy this project", @project, method: :delete, class: 'btn btn-danger' if policy(@project).destroy? %>
+  </div>
 </div>

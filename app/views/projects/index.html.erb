@@ -1,12 +1,28 @@
 <p style="color: green"><%= notice %></p>
-<h1>All Projects</h1>
-<div id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-    <p>
-      <%= link_to 'Show this Project', project %>
-    </p>
-  <% end %>
-</div>
 
-<%= link_to 'Create New Project', new_project_path if policy(Project).new? %>
+<!-- Container for the entire page content -->
+<div class="container">
+  <h1 class="my-4">All Projects</h1>
+
+  <!-- Button to create a new project -->
+  <%= link_to 'Create New Project', new_project_path, class: 'btn btn-primary mb-4' if policy(Project).new? %>
+
+  <!-- Projects Container -->
+  <div class="row" id="projects">
+    <% @projects.each do |project| %>
+      <div class="col-md-4 mb-4"> <!-- Each project in a 3-column grid -->
+        <div class="card">
+          <div class="card-body">
+            <!-- Render individual project details -->
+            <%= render project %>
+
+            <!-- Button to show this project -->
+            <p>
+              <%= link_to 'Show this Project', project, class: 'btn btn-secondary' %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
