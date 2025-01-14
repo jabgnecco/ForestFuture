@@ -1,12 +1,64 @@
-<h1>Welcome to the Home Page!</h1>
 
-<% if @projects.any? %>
-  <h2>Projects:</h2>
-  <ul>
-    <% @projects.each do |project| %>
-      <li><%= project.name %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No projects available.</p>
-<% end %>
+<div class="home-page-banner" style="background-image: url('<%= cl_image_path("p3awejtj1zveicnkkmc0") %>'); background-size: cover; background-position: center; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;">
+  <h1 class="forestfuture-title"><strong>ForestFuture</strong></h1>
+  <h4 class="title-text">Restaurando ecosistemas, empoderando comunidades: juntos por un futuro sostenible.</h4>
+  <%= link_to "EMPIEZA TU BÚSQUEDA", projects_path, class: "home-page-button btn btn-primary btn-lg mt-3" %>
+</div>
+
+<div class="importance-section">
+  <div class="container text-center">
+    <h2 class="importance-title">¿Por qué es importante?</h2>
+    <p class="importance-text">
+      En ForestFuture creemos que la conservación de los ecosistemas no solo protege la biodiversidad, sino que también genera impactos positivos en las comunidades y contribuye a combatir el cambio climático. Restaurar y proteger nuestros recursos naturales es fundamental para un futuro sostenible.
+    </p>
+    <div class="importance-highlights">
+      <div class="highlight-card">
+        <i class="fas fa-leaf highlight-icon"></i>
+        <h4 class="highlight-title">Conservación</h4>
+        <p>Protegemos más de 2,500 hectáreas estratégicas de ecosistemas clave.</p>
+      </div>
+      <div class="highlight-card">
+        <i class="fas fa-users highlight-icon"></i>
+        <h4 class="highlight-title">Comunidades</h4>
+        <p>Empoderamos a las comunidades locales con beneficios económicos y sociales.</p>
+      </div>
+      <div class="highlight-card">
+        <i class="fas fa-cloud highlight-icon"></i>
+        <h4 class="highlight-title">Cambio Climático</h4>
+        <p>Capturamos carbono para mitigar los efectos del cambio climático.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="about-section">
+  <div class="container">
+    <h2 class="section-title">Nuestra Misión</h2>
+    <p class="section-text">
+      Promover la conservación y supervisión ambiental en la Serranía del Perijá mediante la implementación de sistemas de monitoreo, asegurando la restauración y protección de los ecosistemas, para generar beneficios sociales, económicos y climáticos, y establecer esquemas sostenibles de compensación y certificación ambiental.
+    </p>
+  </div>
+</div>
+
+<div class="about-section">
+  <div class="container">
+    <h2 class="section-title">Nuestra Visión</h2>
+    <p class="section-text">
+      Ser reconocidos para el año 2032 como un modelo líder en monitoreo ambiental, restauración ecológica y gestión de servicios ecosistémicos en Colombia, logrando la certificación de al menos 50,000 toneladas de carbono capturado mediante la conservación de ecosistemas estratégicos, y posicionándonos como un referente en la lucha contra el cambio climático.
+    </p>
+  </div>
+</div>
+
+<div class="values-section">
+  <div class="container">
+    <h2 class="section-title">Valores Corporativos</h2>
+    <ul class="values-list">
+      <li><strong>Sostenibilidad:</strong> Compromiso con la conservación de los recursos naturales, la captura de carbono y la mitigación del cambio climático.</li>
+      <li><strong>Innovación:</strong> Uso de tecnologías avanzadas como estaciones de monitoreo y plataformas digitales para medir, verificar y certificar las emisiones y capturas de carbono.</li>
+      <li><strong>Transparencia:</strong> Proporcionar datos verificables sobre la conservación ambiental y la emisión de bonos de carbono certificados, garantizando confianza entre comunidades, socios e inversionistas.</li>
+      <li><strong>Compromiso comunitario:</strong> Involucrar activamente a las comunidades locales en el monitoreo ambiental, la restauración ecológica y la gestión de los beneficios económicos derivados de los bonos de carbono.</li>
+      <li><strong>Responsabilidad ambiental:</strong> Proteger y restaurar 2,500 hectáreas estratégicas, asegurando su regeneración y su contribución a la captura de carbono.</li>
+      <li><strong>Equidad:</strong> Asegurar que los beneficios económicos de los bonos de carbono y los esquemas de compensación ambiental lleguen de manera justa a las comunidades indígenas y campesinas.</li>
+      <li><strong>Excelencia:</strong> Mantener estándares técnicos y científicos de alta calidad en la supervisión, certificación y emisión de al menos 50,000 toneladas de bonos de carbono durante los primeros años del proyecto.</li>
+    </ul>
+  </div>
+</div>

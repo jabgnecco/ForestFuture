@@ -1,1 +1,167 @@
 // Specific CSS for your home-page
+
+.home-page-banner {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+
+  h1.greenlink-title {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  h4.title-text {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .home-page-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #218838;
+      color: #ffffff;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page-banner {
+    h1.greenlink-title {
+      font-size: 2rem;
+    }
+
+    h4.title-text {
+      font-size: 1rem;
+    }
+
+    .home-page-button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.importance-section {
+  padding: 60px 20px;
+  background-color: #eef6f3;
+  color: #333;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .importance-title {
+      font-size: 2.5rem;
+      color: #2a7c4f;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .importance-text {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    .importance-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+
+      .highlight-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+
+        .highlight-icon {
+          font-size: 3rem;
+          color: #2a7c4f;
+          margin-bottom: 15px;
+        }
+
+        .highlight-title {
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+          color: #2a7c4f;
+        }
+
+        p {
+          font-size: 1rem;
+          color: #555;
+        }
+      }
+    }
+  }
+}
+.about-section, .values-section {
+  padding: 60px 20px;
+  background-color: #fff;
+  color: #333;
+
+  &:nth-child(even) {
+    background-color: #eef6f3; // Alterna el color de fondo para mayor contraste
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .section-title {
+      font-size: 2.5rem;
+      color: #2a7c4f;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .section-text {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #555;
+      text-align: justify;
+      margin-bottom: 40px;
+    }
+
+    .values-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+
+      li {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+
+        strong {
+          color: #2a7c4f;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
