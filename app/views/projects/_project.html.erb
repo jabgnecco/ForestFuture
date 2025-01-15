@@ -1,4 +1,16 @@
 <div class="project">
-  <h2><%= project.name %></h2>
-  <p><%= project.description %></p>
+  <div class="card-title-container">
+    <h2 class="card-title"><%= project.name %></h2>
+  </div>
+
+  <!-- Descripción truncada -->
+  <% truncated_description = truncate(project.description, length: 100) %>
+  <p class="card-text"><%= truncated_description %></p>
+
+  <!-- Botón 'Leer más' si el texto fue truncado -->
+  <%# <% if project.description.length > 100 %>
+    <%# <div class="text-center mt-3"> %>
+      <%# <%= link_to 'Leer más', project_path(project), class: 'btn btn-secondary' %>
+    <%# </div> %>
+  <%# <% end %>
 </div>

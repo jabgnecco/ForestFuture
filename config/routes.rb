@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   # Existing resources
   resources :projects
+  resource :profile, only: [:show]
 end

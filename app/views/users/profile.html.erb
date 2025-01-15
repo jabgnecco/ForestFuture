@@ -1,0 +1,23 @@
+<div class="consistent-container">
+  <h1>My Profile</h1>
+  <p>Welcome Back, <%= current_user.first_name %></p>
+
+  <% if @projects.any? %>
+    <div class="profile-cards">
+      <% @projects.each do |project| %>
+        <div class="card">
+          <%= link_to project_path(project) do %>
+            <div class="card-body">
+              <h5 class="card-title"><%= project.name %></h5>
+              <p class="card-description"><%= truncate(project.description, length: 150) %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="no-projects">
+      <p>You haven't created any projects yet, click <%= link_to "here", "/projects/new", style: "color: #4AA761; text-decoration: underline;" %> to create your first one!</p>
+    </div>
+  <% end %>
+</div>

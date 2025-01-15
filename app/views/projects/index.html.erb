@@ -1,27 +1,36 @@
 <p style="color: green"><%= notice %></p>
 
-<!-- Page container with background image -->
+<!-- Contenedor de la página con imagen de fondo -->
 <div class="background-container">
   <div class="container py-5">
-    <h1 class="text-center text-white mb-4">All Projects</h1>
+    <h1 class="text-center text-white mb-4">Todos los Proyectos</h1>
 
-    <!-- Button to create a new project -->
+    <!-- Botón para crear un nuevo proyecto -->
     <div class="text-center mb-4">
-      <%= link_to 'Create New Project', new_project_path, class: 'btn btn-custom' if policy(Project).new? %>
+      <%= link_to 'Crear Nuevo Proyecto', new_project_path, class: 'btn btn-custom' if policy(Project).new? %>
     </div>
 
-    <!-- Projects Grid -->
+    <!-- Rejilla de proyectos -->
     <div class="row" id="projects">
       <% @projects.each do |project| %>
-        <div class="col-md-4 mb-4"> <!-- Each project in a 3-column grid -->
+        <div class="col-md-4 mb-4"> <!-- Cada proyecto en una rejilla de 3 columnas -->
           <div class="card h-100">
+            <!-- Imagen del proyecto -->
+            <div class="card-image-container">
+              <% if project.photo.attached? %>
+                <%= cl_image_tag project.photo.key, class: "card-image" %>
+              <% else %>
+                <%= image_tag "ForestFuture.jpeg", alt: "No Image", class: "card-image" %> <!-- Imagen de reemplazo si no hay foto -->
+              <% end %>
+            </div>
+
             <div class="card-body">
-              <!-- Render individual project details -->
+              <!-- Renderiza los detalles individuales del proyecto -->
               <%= render project %>
 
-              <!-- Button to show this project -->
+              <!-- Botón para mostrar este proyecto -->
               <div class="text-center mt-3">
-                <%= link_to 'Show this Project', project, class: 'btn btn-secondary' %>
+                <%= link_to 'Ver este Proyecto', project, class: 'btn btn-secondary' %>
               </div>
             </div>
           </div>
