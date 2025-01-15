@@ -1,0 +1,20 @@
+<div class="profile-container">
+  <h1>Welcome, <%= @user.email %>!</h1>
+  <p>Email: <%= @user.email %></p>
+  <p>Joined on: <%= @user.created_at.strftime("%B %d, %Y") %></p>
+
+  <h2>Your Projects:</h2>
+  <div class="projects">
+    <% if @projects.any? %>
+      <% @projects.each do |project| %>
+        <div class="project-card">
+          <h3><%= project.name %></h3>
+          <p><%= project.description %></p>
+          <%= link_to "View Project", project_path(project) %>
+        </div>
+      <% end %>
+    <% else %>
+      <p>You don't have any projects yet. <%= link_to "Create one", new_project_path %></p>
+    <% end %>
+  </div>
+</div>

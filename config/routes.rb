@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   # Add a route for the index action in PagesController
   get 'pages/index', to: 'pages#index', as: :pages_index
 
-  # Existing resources
+  # Existing resources for projects
   resources :projects
-  resource :profile, only: [:show]
+
+  # Route for profile
+  resource :profile, only: [:show] # Esta ruta proporciona `profile_path`
+
 end
