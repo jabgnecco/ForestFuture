@@ -111,57 +111,79 @@
     }
   }
 }
-.about-section, .values-section {
-  padding: 60px 20px;
+
+#about-carousel {
+  position: relative;
+  margin: 60px auto;
+  max-width: 900px;
   background-color: #fff;
-  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-  &:nth-child(even) {
-    background-color: #eef6f3; // Alterna el color de fondo para mayor contraste
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
+  .carousel-content {
+    padding: 40px;
+    text-align: center;
 
     .section-title {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: #2a7c4f;
       margin-bottom: 20px;
       font-weight: bold;
-      text-align: center;
     }
 
     .section-text {
       font-size: 1.2rem;
       line-height: 1.8;
       color: #555;
-      text-align: justify;
-      margin-bottom: 40px;
     }
 
     .values-list {
       list-style: none;
       padding: 0;
       margin: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      text-align: left;
 
       li {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 20px;
+        margin-bottom: 15px;
         font-size: 1rem;
         line-height: 1.6;
         color: #555;
 
         strong {
           color: #2a7c4f;
-          font-weight: bold;
         }
       }
     }
+  }
+
+  /* Controles del carrusel */
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: absolute;
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%);
+    width: 50px; /* Aumenta el área de clic */
+    height: 50px; /* Aumenta el área de clic */
+    background-color: rgba(42, 124, 79, 0.8); /* Fondo semitransparente */
+    border-radius: 50%; /* Forma circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-control-prev {
+    left: -60px; /* Mueve el botón izquierdo fuera del contenedor */
+  }
+
+  .carousel-control-next {
+    right: -60px; /* Mueve el botón derecho fuera del contenedor */
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-color: transparent; /* Sin fondo adicional */
   }
 }

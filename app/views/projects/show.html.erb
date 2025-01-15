@@ -3,20 +3,32 @@
 <!-- Container for the project details -->
 <div class="container">
   <!-- Project Details Section -->
-  <div class="card mb-4">
-    <div class="card-body">
-      <%= render @project %>
+  <div class="project-detail-card mb-4">
+
+    <!-- Image Section -->
+    <div class="project-image-container">
+      <% if @project.photo.present? %>
+        <%= cl_image_tag @project.photo.key, height: 200, width: 300, crop: :fill, class: 'project-image' %>
+      <% else %>
+        <p>No image available</p>
+      <% end %>
     </div>
-  </div>
 
-  <!-- Actions Section -->
-  <div class="d-flex justify-content-between mb-4">
-    <% if policy(@project).edit? %>
-      <%= link_to "Edit this Project", edit_project_path(@project), class: 'btn btn-warning' %>
-    <% end %>
+    <!-- Text Section (Project Name and Description) -->
+    <div class="project-text mt-3">
+      <h2 class="project-title"><%= @project.name %></h2>
+      <p class="project-description"><%= @project.description %></p>
+    </div>
 
-    <%= link_to "Back to Projects", projects_path, class: 'btn btn-secondary' %>
+    <!-- Actions Section -->
+    <div class="d-flex justify-content-between mt-4">
+      <% if policy(@project).edit? %>
+        <%= link_to "Edit this Project", edit_project_path(@project), class: 'btn btn-warning' %>
+      <% end %>
 
-    <%= button_to "Destroy this project", @project, method: :delete, class: 'btn btn-danger' if policy(@project).destroy? %>
+      <%= link_to "Back to Projects", projects_path, class: 'btn btn-secondary' %>
+
+      <%= button_to "Destroy this project", @project, method: :delete, class: 'btn btn-danger' if policy(@project).destroy? %>
+    </div>
   </div>
 </div>

@@ -1,12 +1,129 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+/* Navbar Styling */
+.navbar {
+  background-color: #ffffff;
+  padding: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-brand img.logo {
+  height: 50px;
+  width: auto;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+/* Estilo para los botones en la barra de navegación */
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555; /* Color sutil y suave */
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative; /* Necesario para la línea debajo del botón */
+  background-color: transparent; /* Asegura que el fondo sea siempre transparente */
+
+  /* Estilo al pasar el ratón: solo la línea abajo */
+  &:hover {
+    color: #555; /* El color del texto sigue siendo el mismo */
+    background-color: transparent; /* El fondo sigue siendo transparente */
+  }
+
+  /* Línea debajo del botón cuando se pasa el mouse */
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #28a745; /* Línea verde */
+    transition: width 0.3s ease;
+  }
+
+  /* Al hacer hover, la línea debajo se extiende */
+  &:hover::after {
+    width: 100%; /* La línea crece al 100% */
+  }
+}
+
+/* Asegura que los botones personalizados no cambien de color ni fondo al hacer hover */
+.nav-link.btn-custom {
+  background-color: transparent;
+  border: none;
+  color: #555;
+  text-transform: uppercase;
+  font-weight: normal;
+
+  &:hover {
+    color: #28a745; /* Solo cambiará el color del texto al pasar el mouse */
+    background-color: transparent; /* El fondo sigue siendo transparente */
+  }
+}
+
+/* Avatar y Dropdown */
+.nav-item.dropdown .avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #2a7c4f;
+}
+
+.nav-item.dropdown .dropdown-menu {
+  min-width: 250px;
+}
+
+/* Centrar los botones en la barra de navegación */
+.navbar .navbar-nav {
+  display: flex;
+  justify-content: center; /* Centra los botones de la navbar */
+  width: 100%; /* Asegura que ocupe todo el ancho de la navbar */
+}
+
+.navbar-nav .nav-item {
+  margin: 0 10px; /* Espacio entre los botones */
+}
+
+.navbar-nav .nav-link {
+  text-transform: uppercase; /* Pone el texto en mayúsculas */
+  font-weight: bold; /* Pone el texto en negrita */
+  transition: all 0.3s ease; /* Añade una transición suave */
+}
+
+/* Para los elementos de la derecha (email y avatar) */
+.navbar .navbar-right {
+  display: flex;
+  align-items: center; /* Centra los elementos verticalmente */
+  margin-left: auto; /* Empuja los elementos a la derecha */
+}
+
+.navbar .navbar-right .nav-item {
+  margin-left: 20px; /* Espacio entre el email y el avatar */
+}
+
+.navbar .navbar-right .nav-item .nav-link {
+  font-size: 1rem;
+  color: #555;
+  font-weight: normal;
+}
+
+.navbar .navbar-right .nav-item .avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #2a7c4f;
+}
+
+/* Para dispositivos pequeños */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar .navbar-right {
+    margin-left: 0; /* Para pantallas pequeñas, evita que el avatar se empuje hacia la derecha */
+  }
 }

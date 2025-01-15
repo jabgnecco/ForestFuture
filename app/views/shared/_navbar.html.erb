@@ -1,7 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "ForestFuture.jpeg" %>
+      <%= image_tag "ForestFuture.jpeg", class: "logo" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,23 +9,38 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Invertir en Naturaleza", "#", class: "nav-link btn-custom" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Desarrollar Proyecto", "#", class: "nav-link btn-custom" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Explorar Proyectos", "#", class: "nav-link btn-custom" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Recursos", "#", class: "nav-link btn-custom" %>
+        </li>
+      </ul>
+
+      <ul class="navbar-right">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
+          <%# <li class="nav-item"> %>
+            <%# <%= link_to "Home", "#", class: "nav-link" %>
+          <%# </li> %>
+          <%# <li class="nav-item"> %>
+            <%# <%= link_to "Messages", "#", class: "nav-link" %>
+          <%# </li> %>
           <li class="nav-item">
             <div class="nav-link">
               <%= current_user.email %>
             </div>
           </li>
           <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
