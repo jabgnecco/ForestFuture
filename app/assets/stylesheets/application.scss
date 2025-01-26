@@ -14,3 +14,11 @@
 // app/assets/stylesheets/application.scss
 @import "components/projects";
 @import "pages/profile";
+// app/assets/stylesheets/application.scss
+
+@import 'invest_in_nature'; // Esto importa el archivo SCSS
+/* app/assets/stylesheets/application.scss */
+
+@import 'footer'; /* Esto importa el archivo footer.scss */
+
+@import 'explore_projects';
