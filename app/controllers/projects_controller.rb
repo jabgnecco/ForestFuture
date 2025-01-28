@@ -3,6 +3,14 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = policy_scope(Project)
+    @markers = @projects.geocoded.map do |project|
+      {
+        lat: project.latitude,
+        lng: project.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {project: project}),
+        marker_html: render_to_string(partial: "marker", locals: {project: project }),
+      }
+    end
   end
 
   def show

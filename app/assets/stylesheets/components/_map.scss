@@ -1,0 +1,26 @@
+#projects-index-map {
+  width: 30%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  margin-top: 20px;
+  border: 0.5px solid lightgray;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 0.5px 0.25px;
+}
+
+.project-show-map{
+  border:0.9px solid rgb(221, 221, 221);
+  border-radius: 15px;
+  margin-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 0.5px 0.25px;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  border-radius: 8px;
+}
