@@ -7,6 +7,10 @@
   <div class="form_inputs">
     <%= f.input :name %>
     <%= f.input :description %>
+    <%= f.input :photo %>
+    <%= f.input :address, placeholder: "Enter a location", label: "Address" %>
+    <%= f.input :latitude, as: :hidden %>
+    <%= f.input :longitude, as: :hidden %>
   </div>
 
   <div class="form-actions">
